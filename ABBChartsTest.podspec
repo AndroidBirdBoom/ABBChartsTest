@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ABBChartsTest"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "per custom Charts"
 
   # This description is used to generate tags and improve search results.
@@ -40,7 +40,7 @@ this is a custom charts test demo
   #
 
   #spec.license      = "MIT "
-  spec.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
