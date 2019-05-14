@@ -40,7 +40,7 @@ this is a custom charts test demo
   #
 
   #spec.license      = "MIT "
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -68,11 +68,11 @@ this is a custom charts test demo
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
-  # spec.watchos.deployment_target = "2.0"
-  # spec.tvos.deployment_target = "9.0"
-
+  spec.ios.deployment_target = "8.0"
+  spec.tvos.deployment_target = "9.0"
+  spec.osx.deployment_target = "10.11"
+  spec.swift_version = '5.0'
+  spec.cocoapods_version = '>= 1.5.0'
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -91,8 +91,7 @@ this is a custom charts test demo
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Charts/**/*.{h,m,swift}"
-  spec.requires_arc = true
+  spec.source_files  = "Charts/**/*.swift"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
