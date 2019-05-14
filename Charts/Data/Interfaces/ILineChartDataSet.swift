@@ -77,4 +77,14 @@ public protocol ILineChartDataSet: ILineRadarChartDataSet
     
     /// Sets a custom IFillFormatter to the chart that handles the position of the filled-line for each DataSet. Set this to null to use the default logic.
     var fillFormatter: IFillFormatter? { get set }
+    
+    
+    /// following sections of properties is for vertical lines, from each entry point to axis.
+    var drawEntryPointVLineEnabled: Bool { get set }
+    var entryPointVLineWidth:CGFloat { get set }
+    var entryPointVLineColor: NSUIColor { get set }
+    var entryPointVLineDashArray: [CGFloat] { get set }
+    
+    //// for draw values with offset of the value circle,
+    var drawValueVOffset:CGFloat { get set }
 }

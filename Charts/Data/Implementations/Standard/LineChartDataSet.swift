@@ -170,4 +170,13 @@ open class LineChartDataSet: LineRadarChartDataSet, ILineChartDataSet
         copy._fillFormatter = _fillFormatter
         return copy
     }
+    
+    /// following sections of properties is for vertical lines, from each entry point to axis.
+    open var drawEntryPointVLineEnabled: Bool = true
+    open var entryPointVLineWidth:CGFloat = 1.0
+    open var entryPointVLineColor: NSUIColor = NSUIColor.white
+    open var entryPointVLineDashArray: [CGFloat] = [5,1,5,1]
+    
+    ///
+    open var drawValueVOffset:CGFloat = 0.0;
 }

@@ -505,7 +505,7 @@ open class LineChartRenderer: LineRadarRenderer
                                 viewPortHandler: viewPortHandler),
                             point: CGPoint(
                                 x: pt.x,
-                                y: pt.y - CGFloat(valOffset) - valueFont.lineHeight),
+                                y: pt.y - CGFloat(valOffset) - valueFont.lineHeight + dataSet.drawValueVOffset) ,    /// changed by highlander, for draw value text with y offset
                             align: .center,
                             attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: dataSet.valueTextColorAt(j)])
                     }
@@ -632,6 +632,22 @@ open class LineChartRenderer: LineRadarRenderer
                 rect.origin.y = pt.y - circleRadius
                 rect.size.width = circleDiameter
                 rect.size.height = circleDiameter
+                
+                
+                // add by highlander, for test draw a vertical line
+                if dataSet.drawEntryPointVLineEnabled
+                {
+                    //                let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
+                    let axispt = trans.pixelForValues(x: 0, y: -60.0)
+                    context.setLineWidth(dataSet.entryPointVLineWidth);
+                    context.setStrokeColor(dataSet.entryPointVLineColor.cgColor);
+                    //                    let dashArray: [CGFloat] = [5, 1, 5, 1]
+                    context.setLineDash(phase: 0, lengths: dataSet.entryPointVLineDashArray )
+                    context.move(to: CGPoint(x: pt.x, y: pt.y))//开始点位置
+                    context.addLine(to: CGPoint(x: pt.x, y: axispt.y))//结束点位置
+                    context.strokePath();
+                }
+                // end by highlander, for test draw a vertical line
 
                 if drawTransparentCircleHole
                 {
